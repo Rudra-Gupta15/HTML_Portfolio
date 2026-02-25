@@ -26,7 +26,3 @@ This site is deployed on Vercel. Any push to the main branch will automatically 
 ## Local Development
 
 Simply open `index.html` in your browser to view the site locally.
-
-## License
-
-© 2024 Maitheeli Agnihotri. All rights reserved.
