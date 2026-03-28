@@ -53,18 +53,18 @@ const SKILLS_LIST = [
   { n: '05', label: 'Git / Linux',      pct: 70 },
 ];
 
-/* ── 3D orbit data ── */
-const TECHS = [
-  { label: 'Servlets', r: 80,  speed: 0.9,  angle: 0,    orbitTilt: 0.3,  color: '#4F8EF7', size: 14 },
-  { label: 'JSP',      r: 80,  speed: 0.9,  angle: 2.1,  orbitTilt: 0.3,  color: '#2D6CE8', size: 13 },
-  { label: 'JDBC',     r: 80,  speed: 0.9,  angle: 4.2,  orbitTilt: 0.3,  color: '#82AEFF', size: 12 },
-  { label: 'MySQL',    r: 120, speed: 0.55, angle: 0.8,  orbitTilt: -0.4, color: '#00BFFF', size: 14 },
-  { label: 'MVC',      r: 120, speed: 0.55, angle: 3.1,  orbitTilt: -0.4, color: '#4ECDC4', size: 12 },
-  { label: 'OOP',      r: 155, speed: 0.35, angle: 1.5,  orbitTilt: 0.6,  color: '#E0B87A', size: 13 },
-  { label: 'Tomcat',   r: 155, speed: 0.35, angle: 4.8,  orbitTilt: 0.6,  color: '#F48120', size: 12 },
-  { label: 'Git',      r: 190, speed: 0.22, angle: 0.4,  orbitTilt: -0.2, color: '#F05032', size: 11 },
-  { label: 'Maven',    r: 190, speed: 0.22, angle: 3.4,  orbitTilt: -0.2, color: '#C2185B', size: 11 },
-];
+/* ── 3D orbit data (Reference for later use) ── */
+// const TECHS = [
+//   { label: 'Servlets', r: 80,  speed: 0.9,  angle: 0,    orbitTilt: 0.3,  color: '#4F8EF7', size: 14 },
+//   { label: 'JSP',      r: 80,  speed: 0.9,  angle: 2.1,  orbitTilt: 0.3,  color: '#2D6CE8', size: 13 },
+//   { label: 'JDBC',     r: 80,  speed: 0.9,  angle: 4.2,  orbitTilt: 0.3,  color: '#82AEFF', size: 12 },
+//   { label: 'MySQL',    r: 120, speed: 0.55, angle: 0.8,  orbitTilt: -0.4, color: '#00BFFF', size: 14 },
+//   { label: 'MVC',      r: 120, speed: 0.55, angle: 3.1,  orbitTilt: -0.4, color: '#4ECDC4', size: 12 },
+//   { label: 'OOP',      r: 155, speed: 0.35, angle: 1.5,  orbitTilt: 0.6,  color: '#E0B87A', size: 13 },
+//   { label: 'Tomcat',   r: 155, speed: 0.35, angle: 4.8,  orbitTilt: 0.6,  color: '#F48120', size: 12 },
+//   { label: 'Git',      r: 190, speed: 0.22, angle: 0.4,  orbitTilt: -0.2, color: '#F05032', size: 11 },
+//   { label: 'Maven',    r: 190, speed: 0.22, angle: 3.4,  orbitTilt: -0.2, color: '#C2185B', size: 11 },
+// ];
 
 export default function Skills() {
   const canvasRef = useRef(null);

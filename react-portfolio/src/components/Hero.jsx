@@ -21,7 +21,7 @@ export default function Hero() {
           Looking to grow through impactful internships.
         </p>
         <div className="hero-btns">
-          <a href="#" className="btn-primary">Download CV</a>
+          <a href="#contact" className="btn-primary">Download CV</a>
           <a href="#contact" className="btn-outline">Contact Me</a>
         </div>
         <div className="scroll-cue">
