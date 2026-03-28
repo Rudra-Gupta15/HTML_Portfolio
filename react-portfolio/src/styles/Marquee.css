@@ -1,0 +1,50 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MARQUEE
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.marquee {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+  align-items: center;
+}
+
+.marquee-track span {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text2);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.marquee-track .acc {
+  color: var(--amber); /* Vibrant Orange */
+  font-size: 12px;
+  text-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+}
+
+.marquee-track .cyan {
+  color: #00BCD4; /* Vibrant Cyan */
+  text-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

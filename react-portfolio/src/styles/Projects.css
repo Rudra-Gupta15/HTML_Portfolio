@@ -1,0 +1,492 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PROJECTS SECTION
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* Scroll reveal */
+.proj-sr {
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  transition:
+    opacity  0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.proj-sr.sr--vis {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.proj-sr-d0 { transition-delay: 0ms;   }
+.proj-sr-d1 { transition-delay: 100ms; }
+.proj-sr-d2 { transition-delay: 200ms; }
+.proj-sr-d3 { transition-delay: 300ms; }
+
+/* Header row */
+.proj-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+/* Tabs */
+.proj-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.p-tab {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 22px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--text2);
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.25s;
+}
+
+.p-tab:hover {
+  border-color: var(--amber);
+  color: var(--text);
+  background: rgba(255, 107, 53, 0.05);
+}
+
+.p-tab.active {
+  background: linear-gradient(135deg, var(--amber), var(--amber-d));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.35);
+  font-weight: 600;
+}
+
+/* Card nav */
+.pcard-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.pscroll-hint {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pscroll-arrow-anim {
+  animation: arrowpulse 1.5s ease-in-out infinite alternate;
+  display: inline-block;
+}
+
+@keyframes arrowpulse {
+  from { opacity: 0.3; }
+  to   { opacity: 1; }
+}
+
+.pnav-btns { display: flex; gap: 8px; }
+
+.pnav-btn {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--border);
+  background: #1E1E1E;
+  color: var(--text2);
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnav-btn:hover:not(:disabled) {
+  border-color: var(--amber);
+  color: var(--amber);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.pnav-btn:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+/* Card scroll track */
+.pcard-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 15px;
+}
+
+.pcard-scroll::-webkit-scrollbar { display: none; }
+
+.pcard-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  padding: 10px 4px;
+}
+
+/* Individual project cards */
+.pcard {
+  width: 460px;
+  flex-shrink: 0;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: #1a1a1a;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pcard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 107, 53, 0.1);
+  border-color: var(--amber);
+}
+
+.pcard-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pcard-top {
+  padding: 32px 32px 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.pcard-type {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 10px;
+}
+
+.pcard-title {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.pcard-sub {
+  font-size: 15px;
+  color: var(--text2);
+  font-family: var(--body);
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.pcard-img-stage {
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  z-index: 1;
+}
+
+.pcard-img-frame {
+  width: 88%;
+  height: 190px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-3deg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s;
+}
+
+.pcard:hover .pcard-img-frame {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.pcard-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pcard-img-placeholder {
+  font-size: 90px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+.pcard-bottom {
+  padding: 16px 32px 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.pcard-desc {
+  font-size: 14px;
+  color: var(--text2);
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.pcard-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.pcard-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  padding: 5px 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Modal */
+.pmodal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+}
+
+.pmodal {
+  background: #141414;
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.9);
+}
+
+.pmodal-header {
+  padding: 40px 40px 30px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.pmodal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.pmodal-close:hover {
+  background: var(--amber);
+  border-color: transparent;
+  transform: rotate(90deg);
+}
+
+.pmodal-header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pmodal-emoji { font-size: 48px; }
+
+.pmodal-type {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+.pmodal-title {
+  font-family: var(--display);
+  font-size: 36px;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.pmodal-subtitle-txt {
+  font-family: var(--body);
+  font-size: 16px;
+  color: var(--text2);
+  font-weight: 300;
+}
+
+.pmodal-emoji-banner {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.pmodal-banner-emoji { font-size: 80px; }
+
+.pmodal-body { padding: 30px 40px 40px; }
+
+.pmodal-section { margin-bottom: 30px; }
+
+.pmodal-section-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pmodal-overview {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.pmodal-bullets {
+  color: var(--text2);
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.pmodal-bullets li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 300;
+  position: relative;
+}
+
+.pmodal-bullets li::before {
+  content: '✦';
+  position: absolute;
+  left: -20px;
+  color: var(--amber);
+  font-size: 10px;
+  top: 4px;
+}
+
+.pmodal-tech-detail {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.8;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 18px 22px;
+  border-radius: 16px;
+  border-left: 4px solid var(--amber);
+}
+
+.pmodal-outcome {
+  background: rgba(255, 107, 53, 0.1);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+  font-family: var(--body);
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.pmodal-outcome-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.pmodal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.pmodal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pmodal-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #1a1a1a;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  padding: 6px 14px;
+  border-radius: 50px;
+}
+
+.pmodal-github {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pmodal-github:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+  .pcard { width: 90vw; }
+  .pmodal { border-radius: 0; max-height: 100vh; }
+}

@@ -1,0 +1,112 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FOOTER
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  padding: 60px 0 0;
+  text-align: center;
+  /* Deep black base — garden overlays on top */
+  background: #141414;
+  min-height: 280px;
+}
+
+.ft-main-content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 200px;
+}
+
+.ft-connect-text {
+  font-family: var(--display);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.ft-connect-text .star {
+  color: var(--amber);
+}
+
+.ft-soc-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.ft-soc-btn {
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.25s;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.ft-soc-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(255,107,53,0.25);
+  border-color: var(--amber);
+  color: var(--amber);
+  background: rgba(255,107,53,0.1);
+}
+
+.ft-copy {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  padding: 16px;
+  position: relative;
+  z-index: 5;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.4);
+}
+
+/* ── Garden scene — fills FULL footer area ── */
+.ft-sakura-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Take up the whole footer height from bottom */
+  top: 0;
+  overflow: hidden;
+  /* FULL opacity — no dimming */
+  opacity: 1;
+  pointer-events: none;
+}
+
+.ft-sakura-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Floating petals */
+.ft-petal {
+  position: absolute;
+  animation: ftpetal ease-in-out infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes ftpetal {
+  0%   { opacity: 0;   transform: translateY(0)    rotate(0deg); }
+  30%  { opacity: 0.9; }
+  70%  { opacity: 0.7; }
+  100% { opacity: 0;   transform: translateY(-160px) rotate(400deg) translateX(40px); }
+}

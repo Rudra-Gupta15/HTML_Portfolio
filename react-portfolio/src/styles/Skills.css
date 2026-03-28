@@ -1,0 +1,151 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SKILLS SECTION
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* Two-column layout */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+/* ── LEFT: Badge groups ── */
+.skills-left {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.badge-group-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text2);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  white-space: nowrap;
+  cursor: default;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  user-select: none;
+}
+
+.skill-badge:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ── RIGHT: Neural Net ── */
+.skills-right {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.nn-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text2);
+  font-weight: 500;
+}
+
+.canvas-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px var(--shadow);
+}
+
+#skill-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── Progress bars ── */
+.sk-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sk-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sk-i {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  width: 22px;
+  flex-shrink: 0;
+}
+
+.sk-n {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  width: 150px;
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+}
+
+.sk-tr {
+  flex: 1;
+  height: 4px;
+  background: var(--bg2);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.sk-fi {
+  height: 100%;
+  background: linear-gradient(90deg, var(--amber), var(--sage));
+  border-radius: 4px;
+  width: 0;
+  transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sk-p {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--amber);
+  width: 36px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .skills-layout {
+    grid-template-columns: 1fr;
+  }
+}

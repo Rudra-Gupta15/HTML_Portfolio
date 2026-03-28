@@ -1,0 +1,175 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HERO SECTION — Pure Black + Colorful
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+#home {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding: 120px 72px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Left column ── */
+.hero-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-tag::before {
+  content: '✦';
+  color: var(--sage);
+}
+
+/* Big name with gradient */
+.hero-name {
+  font-family: var(--display);
+  font-size: clamp(56px, 7.5vw, 110px);
+  font-weight: 300;
+  line-height: 0.92;
+  color: var(--text);
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+
+.hero-name .gn {
+  font-style: italic;
+  font-weight: 700;
+  background: linear-gradient(135deg, #FF6B35, #FF9A6C, #FFD166);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-tagline {
+  font-family: var(--display);
+  font-size: clamp(17px, 2vw, 24px);
+  color: var(--sage-l);
+  font-style: italic;
+  margin-bottom: 24px;
+  font-weight: 300;
+  max-width: 500px;
+  line-height: 1.55;
+}
+
+.hero-roles {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.h-role {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  border: 1px solid rgba(255,107,53,0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(255,107,53,0.06);
+}
+
+.h-dot {
+  color: var(--amber);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.hero-desc {
+  color: var(--text2);
+  font-size: 15px;
+  max-width: 440px;
+  margin-bottom: 40px;
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.scroll-cue {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 56px;
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--amber));
+}
+
+/* ── Right column — Globe ── */
+.hero-right {
+  flex: 0 0 auto;
+  width: 640px;  /* bigger */
+  height: 700px; /* bigger */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  margin-right: -100px; /* shift more left */
+  margin-top: -60px;    /* move up */
+}
+
+.hero-right canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.globe-tip {
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: rgba(255,107,53,0.5);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 1050px) {
+  #home {
+    flex-direction: column;
+    min-height: auto;
+    padding-top: 120px;
+    gap: 40px;
+  }
+  .hero-right {
+    width: 100%;
+    height: 360px;
+    margin-right: 0;
+  }
+}

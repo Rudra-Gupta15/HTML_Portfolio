@@ -1,0 +1,107 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   NAVBAR
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  padding: 20px 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(20, 20, 20, 0.96);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 72px;
+  box-shadow: 0 4px 32px var(--shadow);
+}
+
+.nav-logo {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 15px rgba(255, 107, 53, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  gap: 38px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text2);
+  text-decoration: none;
+  padding: 4px 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--amber);
+  transition: width 0.3s;
+  border-radius: 1px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.btn-talk {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--amber), var(--amber-d));
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(255, 107, 53, 0.35);
+  transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+  font-weight: 700;
+}
+
+.btn-talk:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255, 107, 53, 0.5);
+  filter: brightness(1.1);
+}
+
+/* Mobile navbar */
+@media (max-width: 960px) {
+  .navbar { padding: 16px 24px; }
+  .navbar.scrolled { padding: 12px 24px; }
+  .nav-links { gap: 18px; }
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+}
